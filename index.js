@@ -5,7 +5,7 @@ class LambdaAuth {
   client;
   constructor(url) {
     this.client = jwksClient({
-      jwksUri: url,
+      jwksUri: "https://unitedingaming.us.auth0.com/.well-known/jwks.json" || url,
     });
   }
 
