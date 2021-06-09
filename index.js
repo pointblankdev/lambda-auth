@@ -16,7 +16,10 @@ const verify = async (token) =>
         });
       },
       null,
-      (err, resp) => resolve(resp)
+      (err, resp) => {
+        console.error(err);
+        resolve(resp);
+      }
     );
   });
 
