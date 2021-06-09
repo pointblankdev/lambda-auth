@@ -5,8 +5,8 @@ const client = jwksClient({
   jwksUri: "https://unitedingaming.us.auth0.com/.well-known/jwks.json",
 });
 
-const verify = async (token) =>
-  await new Promise((resolve, reject) => {
+const verify = (token) =>
+  new Promise((resolve, reject) => {
     jwt.verify(
       token,
       (header, callback) => {
@@ -17,8 +17,12 @@ const verify = async (token) =>
       },
       null,
       (err, resp) => {
-        console.error(err);
-        resolve(resp);
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          resolve(resp);
+        }
       }
     );
   });
