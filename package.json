@@ -1,12 +1,12 @@
 {
   "name": "@pointblankdev/lambda-auth",
   "version": "0.0.1",
-  "description": "",
+  "description": "Lambda authorization for JWTs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ross Ragsdale <ross@pointblankdev.com>",
+  "author": "Ross Ragsdale <ross.ragsdale@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "jsonwebtoken": "^8.5.1",
