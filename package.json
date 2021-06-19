@@ -1,6 +1,6 @@
 {
-  "name": "lambda-auth",
-  "version": "1.0.1",
+  "name": "@pointblankdev/lambda-auth",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {

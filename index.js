@@ -5,8 +5,9 @@ const client = jwksClient({
   jwksUri: "https://unitedingaming.us.auth0.com/.well-known/jwks.json",
 });
 
-const verify = (token) =>
-  new Promise((resolve, reject) => {
+const verify = (token) => {
+  if (!token) return;
+  return new Promise((resolve, reject) => {
     jwt.verify(
       token,
       (header, callback) => {
@@ -26,5 +27,6 @@ const verify = (token) =>
       }
     );
   });
+};
 
 module.exports = { verify };
