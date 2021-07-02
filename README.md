@@ -5,7 +5,7 @@
 Use lambda-auth to `verify()` RS256 JWTs and decode their session.
 
 ```ts
-const { verify } = require("lambda-auth");
+const { verify } = require("@pointblankdev/lambda-auth");
 
 const server = new ApolloServer({
   schema: buildFederatedSchema([{ typeDefs, resolvers }]),
