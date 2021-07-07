@@ -20,7 +20,7 @@ const verify = (token) => {
       (err, resp) => {
         if (err) {
           console.error(err);
-          reject(err);
+          resolve({});
         } else {
           resolve(resp);
         }
