@@ -1,5 +1,6 @@
 const jwksClient = require("jwks-rsa");
 const jwt = require("jsonwebtoken");
+const { get } = require("lodash");
 
 const client = jwksClient({
   jwksUri: "https://unitedingaming.us.auth0.com/.well-known/jwks.json",
