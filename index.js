@@ -33,6 +33,7 @@ const verify = (req) => {
       );
     });
   } catch (error) {
+    console.error(error);
     return {};
   }
 };
