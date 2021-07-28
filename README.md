@@ -2,7 +2,7 @@
 
 ## Usage
 
-Use lambda-auth to `verify()` RS256 JWTs and decode their session.
+Use lambda-auth to `verify()` RS256 JWTs and decode their accessToken.
 
 ```ts
 const { verify } = require("@pointblankdev/lambda-auth");
