@@ -8,7 +8,7 @@ const client = jwksClient({
 
 const verify = (req) => {
   console.log(req);
-  const [bearer, token] = get(req, "headers.authorization").split(" ");
+  const [bearer, token] = get(req, "headers.Authorization").split(" ");
   if (bearer !== "Bearer") throw Error("Bearer prefix missing.");
   if (!token) throw Error("Token undefined.");
   return new Promise((resolve, reject) => {
