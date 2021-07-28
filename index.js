@@ -5,8 +5,10 @@ const client = jwksClient({
   jwksUri: "https://unitedingaming.us.auth0.com/.well-known/jwks.json",
 });
 
-const verify = (token) => {
-  if (!token) return;
+const verify = (req) => {
+  const [bearer, token] = get(req, "headers.authorization").split(" ");
+  if (brearer !== "Bearer") throw Error("Bearer prefix missing.");
+  if (!token) throw Error("Token undefined.");
   return new Promise((resolve, reject) => {
     jwt.verify(
       token,

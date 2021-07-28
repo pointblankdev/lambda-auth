@@ -15,7 +15,7 @@ const server = new ApolloServer({
       functionName: context.functionName,
       event,
       context,
-      user: verify(event.headers.Authorization),
+      user: verify(event),
     };
   },
   playground: {

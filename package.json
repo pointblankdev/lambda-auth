@@ -1,6 +1,6 @@
 {
   "name": "@pointblankdev/lambda-auth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Lambda authorization for JWTs",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jsonwebtoken": "^8.5.1",
-    "jwks-rsa": "^2.0.3"
+    "jwks-rsa": "^2.0.3",
+    "lodash": "^4.17.21"
   }
 }
