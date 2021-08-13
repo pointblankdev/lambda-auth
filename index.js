@@ -2,9 +2,13 @@ const jwksClient = require("jwks-rsa");
 const jwt = require("jsonwebtoken");
 const { get } = require("lodash");
 
-const client = jwksClient({
-  jwksUri: "https://unitedingaming.us.auth0.com/.well-known/jwks.json",
-});
+const isProd = process.env.ENV === "prod";
+
+const jwksUri = isProd
+  ? "https://gathergg.us.auth0.com/.well-known/jwks.json"
+  : "https://unitedingaming.us.auth0.com/.well-known/jwks.json";
+
+const client = jwksClient({ jwksUri });
 
 const verify = (req) => {
   try {
