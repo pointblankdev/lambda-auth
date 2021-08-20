@@ -12,7 +12,8 @@ const client = jwksClient({ jwksUri });
 
 const verify = (req) => {
   try {
-    const [bearer, token] = get(req, "headers.Authorization").split(" ");
+    const authorization = get(req, "headers.authorization") || get(req, "headers.Authorization");
+    const [bearer, token] = authorization.split(" ");
     if (bearer !== "Bearer") throw Error("Bearer prefix missing.");
     if (!token) throw Error("Token undefined.");
     return verifyJwt(token);
