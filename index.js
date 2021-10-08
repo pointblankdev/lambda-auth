@@ -43,7 +43,7 @@ const verifyJwt = (token) => {
       (err, resp) => {
         if (err) {
           console.error(err)
-          resolve({});
+          reject(err);
         } else {
           resolve(resp);
         }
