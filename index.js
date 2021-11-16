@@ -35,7 +35,9 @@ const verifyJwt = (token) => {
     jwt.verify(
       token,
       (header, callback) => {
+        console.log({ header });
         client.getSigningKey(header.kid, (err, key) => {
+          console.log({ key });
           const signingKey = key.publicKey || key.rsaPublicKey;
           callback(null, signingKey);
         });
