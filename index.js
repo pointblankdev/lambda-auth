@@ -31,7 +31,7 @@ const verify = (req) => {
 };
 
 const verifyJwt = (token) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     jwt.verify(
       token,
       (header, callback) => {
