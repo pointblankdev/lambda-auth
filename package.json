@@ -1,6 +1,6 @@
 {
   "name": "@pointblankdev/lambda-auth",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Lambda authorization for JWTs",
   "main": "index.js",
   "scripts": {
