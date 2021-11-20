@@ -16,6 +16,7 @@ const verify = (req) => {
     const authorization =
       get(req, "headers.authorization") || get(req, "headers.Authorization");
 
+    console.log({ authorization });
     if (!authorization) {
       return {};
     }
