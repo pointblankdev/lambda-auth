@@ -16,7 +16,6 @@ const verify = (req) => {
     const authorization =
       get(req, "headers.authorization") || get(req, "headers.Authorization");
 
-    console.log({ authorization });
     if (!authorization) {
       return {};
     }
@@ -36,10 +35,8 @@ const verifyJwt = (token) => {
     jwt.verify(
       token,
       (header, callback) => {
-        console.log({ header });
         client.getSigningKey(header.kid, (err, key) => {
           if (err) console.error(err);
-          console.log({ key });
           const signingKey = key.publicKey || key.rsaPublicKey;
           callback(null, signingKey);
         });
